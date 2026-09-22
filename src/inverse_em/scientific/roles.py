@@ -1,0 +1,13 @@
+from enum import Enum
+
+
+class ScientificRole(str, Enum):
+    DEVELOPMENT = "DEVELOPMENT"
+    TRAINING = "TRAINING"
+    VALIDATION = "VALIDATION"
+    FROZEN = "FROZEN"
+    SEALED_TEST = "SEALED_TEST"
+    ROBUSTNESS = "ROBUSTNESS"
+    POST_HOC = "POST_HOC"
+    REFERENCE_FIXTURE = "REFERENCE_FIXTURE"
+

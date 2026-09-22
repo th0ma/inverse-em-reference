@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inverse-em-reference"
+dynamic = ["version"]
+description = "Auditable reference infrastructure for inverse electromagnetic source studies."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Thomas D. Papadopoulos" }]
+dependencies = []
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6"]
+test = ["pytest>=8"]
+
+[project.scripts]
+inverse-em = "inverse_em.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = { attr = "inverse_em._version.__version__" }
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+markers = [
+  "unit: isolated Phase-0 unit tests",
+  "numerical: deterministic numerical infrastructure tests",
+  "invariant: scientific-contract structural invariant tests",
+  "integration: multi-module Phase-0 tests",
+  "state: lifecycle and authorization tests",
+  "smoke: package and CLI smoke tests",
+  "reference: frozen-reference checks that do not retrain models",
+]
