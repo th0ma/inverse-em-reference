@@ -1,0 +1,13 @@
+# Phase 5: common localization infrastructure
+
+Phase 5 implements only the bounded mechanisms common to the S1, S2, and S3 localizers. It does not implement scientific population generation, training engines, checkpoint selection, sealed evaluation, robustness evaluation, or task-specific Phase 6–8 protocols.
+
+The localizer is a CPU float64 non-residual circular CNN with input `(B,4,30)`, convolutional channels `4 -> 32 -> 64 -> 96`, kernels `5,5,3`, circular padding `2,2,1`, four `LeakyReLU(0.01)` activations, a flattened `2880 -> 128` dense layer, and three-radius/six-angle outputs. It has 399,433 trainable parameters. Internal raw output always retains three slots; public scientific predictions expose only the first one, two, or three active slots.
+
+Radius decoding is exactly `0.05 + 0.90 * torch.sigmoid(raw_radius)`. Its mathematical image is `(0.05,0.95)`, while direct IEEE-754 float64 evaluation may saturate numerically at an endpoint for extreme finite logits. No clipping, endpoint repair, `nextafter`, or artificial logit bound is applied. Angles use `atan2(sin_like, cos_like)` without unit-circle projection.
+
+Common loss components are squared normalized-radius error, squared cosine/sine-vector error, and the unweighted unit-circle penalty. S1 and canonical S2 reductions are available; S3 OUTER reduction is explicit and opt-in, weighting only radial and angular-vector components by `(1 + rho) / 1.635` and never weighting the circle term.
+
+Training-only field consistency reuses the frozen Phase-3 E/H surrogate complex prediction and explicit source-axis superposition. It compares predicted raw channels `(Re(E), Im(E), Re(H), Im(H))` with clean analytical, raw, unnormalized targets. Surrogate parameters are frozen but the predicted-coordinate path remains differentiable. Four zero-initialized float64 Kendall log-variance scalars add four optimized parameters, yielding 399,437 parameters for an FC-enabled optimization set. The FC coefficient is `0.03`. PhysicsTM is not part of this differentiable graph, and surrogates are absent from scientific localizer inference.
+
+Canonical metrics use fixed-slot correspondence and pool all active sources across all samples. Cartesian, radial, and wrapped angular errors are reported with mean, median, RMSE, NumPy p95, p99, and maximum summaries. Permutation matching is isolated as diagnostic-only Cartesian assignment with lexicographic candidate order and first-candidate retention on exact ties.
