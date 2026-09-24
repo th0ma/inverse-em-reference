@@ -18,6 +18,7 @@ test = ["pytest>=8"]
 phase3 = ["torch==2.8.0"]
 phase4 = ["torch==2.8.0"]
 phase5 = ["torch==2.8.0"]
+phase6 = ["torch==2.8.0"]
 
 [project.scripts]
 inverse-em = "inverse_em.cli.main:main"
