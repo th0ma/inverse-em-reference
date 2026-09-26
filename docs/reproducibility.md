@@ -1,5 +1,19 @@
 # Reproducibility
 
+## Published snapshot and evidence boundary
+
+This is the reproducibility entry point for the final published Phase 0–11 bounded research-code snapshot. The canonical serialization material below is retained unchanged as the identity/provenance foundation; its opening tolerance-status statement records the Phase-0 boundary, not a new cross-runtime guarantee.
+
+- [Phase 1](phase1.md) and [Phase 2](phase2.md) define population identities, physics, noise, and clean-training normalization contracts.
+- [Phase 3](phase3.md), [Phase 4](phase4.md), and [Phase 5](phase5.md) document model and common loss mechanisms; [S1](phase6.md), [S2](phase7.md), and [S3](phase8.md) specify bounded training, selection, and continuation.
+- Historical scalar evidence and replay are described in the task records, including S2 and S3. Replay is not retraining or production checkpoint reproduction.
+- [Phase 9](phase9.md) covers bounded evaluation infrastructure; [Phase 10](phase10.md) covers synthetic compatibility and explicit protected-result lifetimes.
+- [Phase 11](phase11.md) records the final freeze, historical verification outcomes, accepted manifest-authority limitation, and baseline-pinned closure-harness lifecycle. Its pre-publication evidence is not a post-publication closure-suite pass.
+
+Repository regression and bounded reproducibility do not establish full historical production-training reproduction, cross-runtime bitwise scientific reproduction, sealed/robustness result reproduction, or production migration equivalence. Descriptive identities and receipts are not authentication or execution authority. See [governance](governance.md) and [limitations](limitations.md).
+
+## Historical Phase-0 identity foundation
+
 Phase 0 establishes deterministic canonical JSON hashing, typed provenance schemas, and lifecycle receipts. Class A uses exact identity. Class B defaults to `rtol=1e-12`, `atol=1e-14`. Class C PhysicsTM and full-model tolerances remain unresolved pending evidence-based characterization; no tolerance is invented here.
 
 ## canonical-json-v1

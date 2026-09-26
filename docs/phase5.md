@@ -1,5 +1,7 @@
 # Phase 5: common localization infrastructure
 
+> **Publication context:** This document is a historical phase-time technical record within the final published Phase 0–11 research-code snapshot. Candidate, uncommitted, review-pending, and later-phase-not-implemented statements describe that phase boundary, not the current repository status; they are retained for auditability. Current status is recorded in the [final Phase-11 freeze](phase11.md#final-research-code-freeze-accepted-limitations-and-verification-history) and [repository overview](../README.md). This framing neither changes the contracts or execution limits below nor upgrades historical verification claims.
+
 Phase 5 implements only the bounded mechanisms common to the S1, S2, and S3 localizers. It does not implement scientific population generation, training engines, checkpoint selection, sealed evaluation, robustness evaluation, or task-specific Phase 6–8 protocols.
 
 The localizer is a CPU float64 non-residual circular CNN with input `(B,4,30)`, convolutional channels `4 -> 32 -> 64 -> 96`, kernels `5,5,3`, circular padding `2,2,1`, four `LeakyReLU(0.01)` activations, a flattened `2880 -> 128` dense layer, and three-radius/six-angle outputs. It has 399,433 trainable parameters. Internal raw output always retains three slots; public scientific predictions expose only the first one, two, or three active slots.

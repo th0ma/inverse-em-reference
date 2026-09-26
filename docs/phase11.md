@@ -1,5 +1,7 @@
 # Phase 11: final regression and reproducibility
 
+> **Current publication status:** This is the final published/frozen bounded research-code snapshot, closed with documented accepted limitations. The [final freeze record](#final-research-code-freeze-accepted-limitations-and-verification-history) governs its current status. Earlier candidate language, closure preconditions, failed checks, and the FAILED independent closure-readiness verdict remain below as historical evidence. The manifest-authority limitation was accepted, not repaired; publication is not production scientific reproduction.
+
 Status: bounded implementation candidate; independent verification and separate
 closure/publication authorization are required. No production reproduction claim.
 

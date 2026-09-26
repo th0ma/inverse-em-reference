@@ -1,5 +1,7 @@
 # Phase 2: measurement noise and clean-training normalization
 
+> **Publication context:** This document is a historical phase-time technical record within the final published Phase 0–11 research-code snapshot. Candidate, uncommitted, review-pending, and later-phase-not-implemented statements describe that phase boundary, not the current repository status; they are retained for auditability. Current status is recorded in the [final Phase-11 freeze](phase11.md#final-research-code-freeze-accepted-limitations-and-verification-history) and [repository overview](../README.md). This framing neither changes the contracts or execution limits below nor upgrades historical verification claims.
+
 Phase 2 provides two scientific facilities only: frozen raw-complex measurement noise and task-specific normalization fitted from clean analytical training observations. It performs no model training, sealed evaluation, robustness evaluation, or Phase-3 work.
 
 ## Raw-complex measurement noise

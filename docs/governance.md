@@ -1,5 +1,15 @@
 # Project governance and reference-document register
 
+## Public repository context
+
+The governing specifications and authorization documents referenced below governed development where stated; they are not necessarily distributed with this public repository. This register does not reconstruct them or imply that a public reader has independently verified unavailable documents. Readers can inspect the committed implementation and [public phase records](scientific_method.md).
+
+Current publication status is represented by the committed repository and the [final Phase-11 research-code freeze](phase11.md#final-research-code-freeze-accepted-limitations-and-verification-history), subject to its documented accepted limitations. Descriptive receipts, hashes, seeds, and provenance evidence are not authentication or execution authority. Publication does not authorize scientific execution or establish production reproduction.
+
+## Historical development authority and document register
+
+The authority order and register below are retained as the development record. Phase-0 inclusion statements and the prospective public-registry sentence describe that historical context, not a promise of further work or a claim that those documents are now bundled.
+
 Authority order:
 
 1. **Scientific & Software Specification v1.0**, as clarified by the Blueprint Resolution Addendum v1.0.

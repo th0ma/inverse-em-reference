@@ -1,5 +1,7 @@
 # Phase 4: source-count classifier
 
+> **Publication context:** This document is a historical phase-time technical record within the final published Phase 0–11 research-code snapshot. Candidate, uncommitted, review-pending, and later-phase-not-implemented statements describe that phase boundary, not the current repository status; they are retained for auditability. Current status is recorded in the [final Phase-11 freeze](phase11.md#final-research-code-freeze-accepted-limitations-and-verification-history) and [repository overview](../README.md). This framing neither changes the contracts or execution limits below nor upgrades historical verification claims.
+
 Phase 4 implements the bounded mechanism for the five-class (`S=1..5`, label `S-1`) source-count classifier. It does not authorize or perform scientific population generation, scientific training, sealed evaluation, or robustness evaluation.
 
 The model is a CPU float64 circular 1-D residual network with input `(B,4,30)`, 64 hidden channels, four two-convolution residual blocks, one dropout (`p=0.1`) per block, adaptive average pooling, and a five-logit linear head. Its exact trainable parameter count is 99,973. Initialization reproduces the historical state digest `e97893358d9633d3d693b56c15bdef5edea56ee8d68a06861ef144a322ade925` while preserving caller Torch RNG state.

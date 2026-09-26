@@ -1,5 +1,7 @@
 # Phase 10: bounded artifact integration
 
+> **Publication context:** This document is a historical phase-time technical record within the final published Phase 0–11 research-code snapshot. Candidate, uncommitted, review-pending, and later-phase-not-implemented statements describe that phase boundary, not the current repository status; they are retained for auditability. Current status is recorded in the [final Phase-11 freeze](phase11.md#final-research-code-freeze-accepted-limitations-and-verification-history) and [repository overview](../README.md). This framing neither changes the contracts or execution limits below nor upgrades historical verification claims.
+
 Status: implementation candidate, not independently verified or closed. No
 production artifact acceptance or Phase-11 execution is enabled.
 

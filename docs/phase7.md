@@ -1,5 +1,7 @@
 # Phase 7: bounded S2 localization
 
+> **Publication context:** This document is a historical phase-time technical record within the final published Phase 0–11 research-code snapshot. Candidate, uncommitted, review-pending, and later-phase-not-implemented statements describe that phase boundary, not the current repository status; they are retained for auditability. Current status is recorded in the [final Phase-11 freeze](phase11.md#final-research-code-freeze-accepted-limitations-and-verification-history) and [repository overview](../README.md). This framing neither changes the contracts or execution limits below nor upgrades historical verification claims.
+
 Status: bounded implementation candidate, not a production training runner.
 Parent: ffc8da1abb8e723a3bb9887180b328373b058a44, tree
 aa44b032d15fbe2c663ce7aebc79652b46440b09.
